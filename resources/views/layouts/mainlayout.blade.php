@@ -70,7 +70,6 @@
                         <a href="{{ route('habar.home') }}" class="light_logo"><img src="img/logo-light.svg" alt="logo"></a>
                         <a href="{{ route('habar.home') }}" class="dark_logo"><img src="img/logo-dark.svg" alt="logo"></a>
                     </div>
-
                     
                     <div class="mainnav d-none d-lg-block">
                         <ul class="main_menu">
@@ -93,23 +92,10 @@
                             @endauth
                         </ul>
                     </div>
-                    <!-- <div class="header_right_part d-flex align-items-center">
-                        <button class="aside_open">
-                            <span class="line"></span>
-                            <span class="line"></span>
-                            <span class="line"></span>
-                        </button>
-                        <div class="header_search">								
-                            <button type="submit" class="form-control-submit"><i class="bi bi-search"></i></button>
-                        </div>
-                        <div class="open_search">
-                            <form class="search_form" action="search.php">
-                                <input type="text" name="search" class="keyword form-control" placeholder="Search...">
-                                <button type="submit" class="form-control-submit"><i class="bi bi-search"></i></button>
-                            </form>
-                        </div>
-                        </button>
-                    </div> -->
+                    <div class="header_right_part d-flex align-items-center">
+                    <button type="button" class="mr_menu_toggle d-lg-none">
+                        <i class="bi bi-list"></i>
+                    </button>
                 </div>
 			</div>
 		</header>
