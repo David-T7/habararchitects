@@ -44,22 +44,6 @@
 
                     <div class="col-lg-4 col-md-4">
                         <div class="team-block">
-                            <img src="/img/team/2.jpg" alt="img">
-                            <h5 class="text-white"><a href="#">Kidus Teklu</a></h5>
-                            <h6 class="text-uppercase text-olive">ARCHITECT</h6>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4">
-                        <div class="team-block">
-                            <img src="/img/team/3.jpg" alt="img">
-                            <h5 class="text-white"><a href="#">Biniam Gedlu</a></h5>
-                            <h6 class="text-uppercase text-olive">Principle Architect</h6>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4">
-                        <div class="team-block">
                             <img src="/img/team/4.jpg" alt="img">
                             <h5 class="text-white"><a href="#">Fahmi Girma. Grace</a></h5>
                             <h6 class="text-uppercase text-olive">Principle Architect</h6>

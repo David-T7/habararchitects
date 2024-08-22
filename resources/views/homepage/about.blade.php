@@ -201,22 +201,6 @@
 
                         <div class="swiper-slide">
                             <div class="team-block">
-                                <img src="/img/team/2.jpg" alt="img">
-                                <h5 class="text-white"><a href="#">Kidus Teklu</a></h5>
-                                <h6 class="text-uppercase text-olive">ARCHITECT</h6>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="team-block">
-                                <img src="/img/team/5.jpg" alt="img">
-                                <h5 class="text-white"><a href="#">Biniam Gedlu</a></h5>
-                                <h6 class="text-uppercase text-olive">Principle Architect</h6>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="team-block">
                                 <img src="/img/team/3.jpg" alt="img">
                                 <h5 class="text-white"><a href="#">Fahmi Girma</a></h5>
                                 <h6 class="text-uppercase text-olive">Principle Architect</h6>
