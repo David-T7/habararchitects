@@ -17,7 +17,6 @@
     </div>        
 </div>
 
-
 <!-- Main Wrapper-->
 <main class="wrapper">
     <!-- Scroll Progress -->

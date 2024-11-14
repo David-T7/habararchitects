@@ -20,7 +20,7 @@
                                                 @endforeach
                                             </div>
                                             <h4>
-                                                <a href="project-details.html" class="text-white">
+                                                <a href="{{ route('habar.project', $project->id ?? '1' ) }}" class="text-white">
                                                     {{ $project->title }}
                                                 </a>
                                             </h4>

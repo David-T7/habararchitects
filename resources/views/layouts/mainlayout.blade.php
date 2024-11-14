@@ -67,8 +67,8 @@
             <div class="container">
                 <div class="header_inner d-flex align-items-center justify-content-between">
                     <div class="logo">
-                        <a href="{{ route('habar.home') }}" class="light_logo"><img src="img/logo-light.svg" alt="logo"></a>
-                        <a href="{{ route('habar.home') }}" class="dark_logo"><img src="img/logo-dark.svg" alt="logo"></a>
+                        <a href="{{ route('habar.home') }}" class="light_logo"><img src="/img/logo-light.svg" alt="logo"></a>
+                        <a href="{{ route('habar.home') }}" class="dark_logo"><img src="/img/logo-dark.svg" alt="logo"></a>
                     </div>
                     
                     <div class="mainnav d-none d-lg-block">
@@ -173,7 +173,7 @@
                                 <div class="footer_elements d-flex align-items-center justify-content-end">
                                     <div class="footer_elements_inner">
                                         <div class="footer_logo" data-aos="fade-up" data-aos-duration="500">
-                                            <a href="{{ route('habar.home') }}" class="light_logo"><img src="img/logo-light.svg" alt="logo"></a>
+                                            <a href="{{ route('habar.home') }}" class="light_logo"><img src="/img/logo-light.svg" alt="logo"></a>
                                         </div>
                                         <div class="footer_social">
                                             <ul class="social_list">
