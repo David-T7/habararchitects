@@ -59,7 +59,7 @@
                                     <li>Organized to deliver the most specialized service possible and enriched by the depth.</li>
                                 </ul> -->
 
-                                <figure class="block-gallery">
+                                <figure class="block-gallery mt-5">
                                     <ul class="blocks-gallery-grid">
                                         @foreach ($images as $index => $image)
                                             @if($index > 1)
@@ -150,7 +150,19 @@
                                     <span class="data">Project Title:</span> <span class="value">{{ $project->title }}</span>
                                 </li>
                                 <li>
-                                    <span class="data">Architect:</span> <span class="value">{{ $project->architects[0] }}</span>
+                                    <span class="data">Client:</span> <span class="value">{{ $project->client }}</span>
+                                </li>
+                                <li>
+                                    <span class="data">Typology:</span> <span class="value">{{ $project->typology ?? '' }}</span>
+                                </li>
+                                <li>
+                                    <span class="data">Size:</span> <span class="value">{{ $project->story_num }}</span>
+                                </li>
+                                <li>
+                                    <span class="data">Lead Consultant:</span> <span class="value">{{ $project->architects[0] }}</span>
+                                </li>
+                                <li>
+                                    <span class="data">Scope:</span> <span class="value">{{ $project->types[0] }}</span>
                                 </li>
                                 <li>
                                     <span class="data">Year:</span> <span class="value">{{ $project->year }}</span>

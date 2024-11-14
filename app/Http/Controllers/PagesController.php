@@ -92,7 +92,7 @@ class PagesController extends Controller
                                 ->value('id');
         
         $pageData = array (
-            'pageTitle' => '$project->code_name',
+            'pageTitle' => $project->title,
             'previousProjectId' => $previousProjectId,
             'nextProjectId' => $nextProjectId,
         );
