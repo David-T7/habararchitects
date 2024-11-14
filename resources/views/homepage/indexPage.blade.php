@@ -21,7 +21,7 @@
                                             </div>
                                             <h4>
                                                 <a href="project-details.html" class="text-white">
-                                                    {{ $project->title }} &mdash; {{ $project->code_name }}
+                                                    {{ $project->title }}
                                                 </a>
                                             </h4>
                                             <div class="details_link">
