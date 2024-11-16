@@ -159,7 +159,7 @@
                                     <span class="data">Size:</span> <span class="value">{{ $project->story_num }}</span>
                                 </li>
                                 <li>
-                                    <span class="data">Lead Consultant:</span> <span class="value">{{ $project->architects[0] }}</span>
+                                    <span class="data">Lead Consultant:</span> <span class="value">{{ $project->collaborators[0] }}</span>
                                 </li>
                                 <li>
                                     <span class="data">Scope:</span> <span class="value">{{ $project->types[0] }}</span>
