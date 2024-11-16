@@ -35,7 +35,7 @@
                                 <h3 class="post-title">{{ $project->title }}</h3>
                             </div>
                             <div class="fulltext">
-                                <p>
+                                <p style="text-align: justify;">
                                     {{ $project->description }}
                                 </p>
                                 <figure class="block-gallery mb-0">
