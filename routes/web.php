@@ -16,7 +16,9 @@ Route::get('/team', [PagesController::class, 'openHabarTeampage'])->name('habar.
 Route::get('/about', [PagesController::class, 'openHabarAboutpage'])->name('habar.about');
 Route::get('/contact', [PagesController::class, 'openHabarContactpage'])->name('habar.contact');
 Route::get('/projects', [PagesController::class, 'openHabarProjects'])->name('habar.project_list');
+Route::get('/products', [PagesController::class, 'openHabarProducts'])->name('habar.product_list');
 Route::get('/project/{id}', [PagesController::class, 'openHabarProject'])->name('habar.project');
+Route::get('/product/{id}', [PagesController::class, 'openHabarProduct'])->name('habar.product');
 Route::get('/news', [PagesController::class, 'openHabarAllNews'])->name('habar.news_list');
 Route::get('/news/{id}', [PagesController::class, 'openHabarNews'])->name('habar.news');
 

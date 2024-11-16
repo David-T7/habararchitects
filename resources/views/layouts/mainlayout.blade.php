@@ -73,9 +73,11 @@
                     
                     <div class="mainnav d-none d-lg-block">
                         <ul class="main_menu">
-                            <li class="menu-item {{ $pageTitle === 'Habar Architects' ? 'active' : '' }}"><a href="{{ route('habar.home') }}">Home</a></li>
+                            <!-- <li class="menu-item {{ $pageTitle === 'Habar Architects' ? 'active' : '' }}"><a href="{{ route('habar.home') }}">Home</a></li> -->
 
-                            <li class="menu-item {{ $pageTitle === 'Habar Architects — Project List' ? 'active' : '' }}"><a href="{{ route('habar.project_list') }}">Projects</a></li>
+                            <li class="menu-item {{ $pageTitle === 'Habar Architects — Project List' ? 'active' : '' }}"><a href="{{ route('habar.project_list') }}">Architecture</a></li>
+
+                            <li class="menu-item {{ $pageTitle === 'Habar Architects — Product List' ? 'active' : '' }}"><a href="{{ route('habar.project_list') }}">Products</a></li>
                                     
                             <li class="menu-item {{ $pageTitle === 'About Habar Architects' ? 'active' : '' }}"><a href="{{ route('habar.about') }}">About Us</a></li>
 
