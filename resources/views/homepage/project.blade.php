@@ -161,9 +161,9 @@
                                 <li>
                                     <span class="data">Collaboration:</span> <span class="value">{{ $project->collaborators }}</span>
                                 </li>
-                                <li>
-                                    <!-- <span class="data">Scope:</span> <span class="value">{{ $project->types[0] }}</span> -->
-                                </li>
+                                <!-- <li>
+                                    <span class="data">Scope:</span> <span class="value">{{ $project->types[0] }}</span>
+                                </li> -->
                                 <li>
                                     <span class="data">Year:</span> <span class="value">{{ $project->year }}</span>
                                 </li>
