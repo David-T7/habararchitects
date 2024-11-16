@@ -34,7 +34,8 @@
                 @foreach ($projects as $project)                  
                     <div class="grid-item residences">
                         <div class="thumb">
-                            <img class="item_image" src="img/portfolio/grid-list/1.jpg" alt="">
+                            @php $images = json_decode($project->images->project_pictures,true); @endphp
+                            <img class="item_image" src="{{ asset('/img/projects/'.$project->id.'/main/'.$images[0]) }}" alt="">
                             <div class="works-info">
                                 <div class="label-text">
                                     <h6><a href="#">{{ $project->code_name }}</a></h6>

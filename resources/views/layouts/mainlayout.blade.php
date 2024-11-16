@@ -141,7 +141,7 @@
         <?php if($pageTitle !== 'Habar Architects') : ?>
             <!-- Footer-->
             <footer class="footer bg-dark-200 box_padding">
-                <div class="footer_inner bg-gray" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="footer_inner bg-black" data-aos="zoom-in" data-aos-duration="1000">
                     <div class="container">
                         <div class="row align-items-end">
                             <div class="col-lg-4 col-md-2 col-sm-2">
