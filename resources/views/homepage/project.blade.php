@@ -163,8 +163,8 @@
                                 </li>
                                 <li>
                                     <span class="data">Engineering Team:</span>
-                                        @foreach ($project->engineers as $index => $engineer)
-                                            <span class="value">{{ $engineer }}</span>
+                                        @foreach ($project->engineers ?? '' as $engineer)
+                                            {{ $engineer }}@if(!$loop->last),@endif
                                         @endforeach
                                 </li>
                                 <li>
