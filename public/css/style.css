@@ -12404,7 +12404,7 @@ body.left_menu .mr_menu {
 
 .theme_slider_2 .swiper-slide .slider .slide_content .slide_content_wrapper .slide_content_inner h4, .theme_slider_2 .swiper-slide .slider .slide_content .slide_content_wrapper .slide_content_inner .h4 {
   position: relative;
-  font-family: "saol_displayregular", sans-serif;
+  /* font-family: "saol_displayregular", sans-serif; */
   font-size: calc(1.425rem + 1.8vw);
   font-weight: 400;
   padding-top: calc(2.6875rem + 14.78571vw);
