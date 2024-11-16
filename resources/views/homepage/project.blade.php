@@ -163,9 +163,11 @@
                                 </li>
                                 <li>
                                     <span class="data">Engineering Team:</span>
-                                    @foreach ($project->engineers ?? '' as $engineer)
-                                        <span class="value">{{ $engineer }}@if(!$loop->last),@endif</span>
-                                    @endforeach
+                                        <span class="value">
+                                            @foreach ($project->engineers ?? '' as $engineer)
+                                                {{ $engineer }}@if(!$loop->last),@endif
+                                            @endforeach
+                                        </span>
                                 </li>
                                 <li>
                                     <span class="data">Year:</span> <span class="value">{{ $project->year }}</span>
