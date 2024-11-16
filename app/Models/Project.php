@@ -12,7 +12,7 @@ class Project extends Model
 
     protected $fillable = [
         'title', 'code_name', 'city', 'country', 'types', 'collaborators', 'location', 'year', 'site_area', 'floor_area', 
-        'story_num', 'client', 'budget', 'category', 'status', 'description', 'engineering', 'currency', 'isActive', 'featured',
+        'story_num', 'client', 'budget', 'category', 'status', 'description', 'engineers', 'currency', 'isActive', 'featured',
         'postedBy'
     ];
 
@@ -22,7 +22,7 @@ class Project extends Model
      * @var array
      */
     protected $casts = [
-        'engineering' => 'array',
+        'engineers' => 'array',
         'types' => 'array',
     ];
 
