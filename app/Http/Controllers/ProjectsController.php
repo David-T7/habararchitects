@@ -25,7 +25,7 @@ class ProjectsController extends Controller
     {
         abort_if(Gate::denies('projects_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $projects = Project::get();
+        $projects = Project::orderby('id')->get();
         $pageData = array (
             'pageTitle' => 'Habar Projects'
         );
