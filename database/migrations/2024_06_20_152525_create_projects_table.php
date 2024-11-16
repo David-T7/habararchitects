@@ -28,7 +28,7 @@ return new class extends Migration {
             $table->string('category')->default('small')->nullable();
             $table->string('status')->default('Under Construction')->nullable();
             $table->longtext('description')->nullable();
-            $table->json('architects')->nullable();
+            $table->json('engineers')->nullable();
             $table->string('currency')->default('ETB')->nullable();
             $table->Boolean('isActive')->default(1);
             $table->Boolean('featured')->default(0);

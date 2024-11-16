@@ -37,7 +37,7 @@ class ProjectsTableSeeder extends Seeder
                                     of the city containing other amenities, together with restaurants and retail shopping. The design of
                                     this development uses the space efficiently and effectively with modern general look of the buildings
                                     that will improve the environment as an urban development point of view.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -69,7 +69,7 @@ class ProjectsTableSeeder extends Seeder
                                     * Project has 5 phases: Phase One : 2 residential Blocks | Phase Two : 3 residential Blocks |
                                     Phase Three : 2 residential Blocks | Phase Four : Office Tower | Phase Five : Mall and Final
                                     executive apartment./GGL',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 1,
@@ -95,7 +95,7 @@ class ProjectsTableSeeder extends Seeder
                 'description'   => 'A luxury hotel, by Top water is set to be constructed at the heart of Addis Ababa havng the public
                                     spaces such as bars, restaurants and meeting halls on the podium. The façade of the hotel is one of
                                     the unique character it holds, reflecting idiosyncratic features and boldness of the architecture.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -124,7 +124,7 @@ class ProjectsTableSeeder extends Seeder
                                     monumentality and sacred gist. Consequently opening perforations are designed to mimic nature in
                                     its irregularity and randomness, the perforation permit daylight creates a rain of light into the interior
                                     space.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -156,7 +156,7 @@ class ProjectsTableSeeder extends Seeder
                                     cascading to the direction of the river to create a better pleasant views toward to the
                                     site. The development will include an apartment complex, office, hotel, commercial
                                     spaces, recreational space, parking, playground and greeneries .',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -189,7 +189,7 @@ class ProjectsTableSeeder extends Seeder
                                     space by making it more livable treating it with balcony façade treatment. The development
                                     will include an apartment complex, commercial shopping, various services,
                                     recreational space, parking, playground and greeneries.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -218,7 +218,7 @@ class ProjectsTableSeeder extends Seeder
                                     combination of modern amenities, health and sports facilities. This makes the project
                                     unique and original. This quality of the project will definitely insure sufficient achievement
                                     of economic returnsof our investment.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -246,7 +246,7 @@ class ProjectsTableSeeder extends Seeder
                                     with production facilities. Color, texture, and organic shapes create an uplifting and exciting
                                     space, bringing a smile to employees’ and visitors’ faces alike. The scope included interior design
                                     of the office areas, the front façade and entrance design, and service areas for the employees.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 1,
@@ -278,7 +278,7 @@ class ProjectsTableSeeder extends Seeder
                                     using clear glass to the front side, while approaching the apartment floors with different color treatment
                                     to the outside of the façade in order to create a vibrant exterior look that reflect the character
                                     of the surrounding.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -308,7 +308,7 @@ class ProjectsTableSeeder extends Seeder
                                     element create a modern pergola system which in turn gives shade to the communal area for
                                     the residences at the roof top. The 14 story residential tower comprises 14 spacious residences
                                     all of them are 3 bedroom typologies, and the ground space left for the car parking.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -336,7 +336,7 @@ class ProjectsTableSeeder extends Seeder
                                     The design of the luxury apartments begins as an experience of arrival and throughout the journey to
                                     home. A key driver is to enhance a close connection to the natural surroundings of air, light, landscape
                                     and river throughout the journey.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -365,7 +365,7 @@ class ProjectsTableSeeder extends Seeder
                                     volumes also present the opportunity to organize extensive roof deck amenities
                                     for the residents at different levels with views of the city. The volume dedicated to
                                     residential programs, office floors and commercial spaces.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -393,7 +393,7 @@ class ProjectsTableSeeder extends Seeder
                                     The youth center includes a minim library, performing area, games centers and an auditorium. The
                                     containers will be painted vibrant colors so as to reflect behavior of the youth, being full of energy
                                     and life adventures.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 1,
@@ -424,7 +424,7 @@ class ProjectsTableSeeder extends Seeder
                                     glazed reception provides a transition from the street along with mezzanine floor of restaurant
                                     provision for the employees. At the top of the building a double height office space gives the
                                     executive manager with board room create symbolic expression of the company’s vision.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -452,7 +452,7 @@ class ProjectsTableSeeder extends Seeder
                                     possible by the architectural modifications and exceptional interior design works.
                                     Now, it is one of the well-known and most preferred hotels in Bahir Dar. The clients
                                     are happy and satisfied which is the firms first priority.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -480,7 +480,7 @@ class ProjectsTableSeeder extends Seeder
                                     of this hotel is well thought and made to be one that you can easily recognize.
                                     For all the rooms of the hotel, natural light and ventilation is made accessible thus
                                     reducing cost for energy. The space quality and standards were given the top priority.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -493,7 +493,7 @@ class ProjectsTableSeeder extends Seeder
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
-                'collaborators' => 'NIMONAH CONSULTING ARCHITECTs',
+                'collaborators' => 'NIMONAH CONSULTING ARCHITECTS',
                 'location'      => 'Bole sub city, Addis Ababa, Ethiopia',
                 'year'          => '2021',
                 'site_area'     => '0',
@@ -518,7 +518,7 @@ class ProjectsTableSeeder extends Seeder
                                     for guests. Aside from the effort of becoming Vernacular, one or two pieces of
                                     modern classic are added to the mix, boosting the quality and attaining the
                                     targeted design objectives.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -546,7 +546,7 @@ class ProjectsTableSeeder extends Seeder
                                     that provides both privacy and protection from the elements and the temperature
                                     extremes of the outside environment. Therefore, admittedly, this project achieved the
                                     thermal comfort and making it pleasant for occupants.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -580,7 +580,7 @@ class ProjectsTableSeeder extends Seeder
                                     wind, and views, in addition to view-related elements. Last but not least, the collaboration
                                     between the client and the architectural team to produce the design plan and
                                     build the house are reflected in the masterpiece.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -610,7 +610,7 @@ class ProjectsTableSeeder extends Seeder
                                     demands of the customer, which entailed conducting ongoing, constructive tests of various ways to employ building
                                     materials for the structure, walls, flooring, and other finishes. Not to mention, interior spaces aim towards an
                                     uncluttered, lightly planned spaciousness where significant, frequently endearingly simple moments might naturally arise.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -637,7 +637,7 @@ class ProjectsTableSeeder extends Seeder
                                     current in the final stages of the construction phase in “Jemo Michael” in “Nifas
                                     silk” sub city. Up on its compilation, it will be the one that stands out as it features
                                     a modern design approaches.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -665,7 +665,7 @@ class ProjectsTableSeeder extends Seeder
                                     units not disturb each other. The exterior is treated with a limited number of
                                     materials and textures resulting with an elegant look. The form is well put together
                                     with careful attention to proportion and scale.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -693,7 +693,7 @@ class ProjectsTableSeeder extends Seeder
                                     are design with carefully and much detail to make them have a better connection to the
                                     outside environment to make them more enjoyable. With its modernist approach, villa
                                     Yonathan is one the most well designed projects.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,
@@ -723,7 +723,7 @@ class ProjectsTableSeeder extends Seeder
                                     products will be displayed on the walls as a decorative element. The overall formal
                                     approach of the coffee shop is a paramedic approach of the site. Following the parallel
                                     alignment of the access points, and reflecting it on the roof by angular manner.',
-                'architects'    => '{}',
+                'engineers'    => '[""]',
                 'currency'      => 'ETB',
                 'isActive'      => 1,
                 'featured'      => 0,

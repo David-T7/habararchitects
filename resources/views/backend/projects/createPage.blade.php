@@ -125,9 +125,9 @@
                                         
                                         <div class="grid grid-cols-6 gap-6">
                                             <div class="col-span-6 sm:col-span-3">
-                                                <label for="architects[]" class="block text-sm font-medium text-gray-700">Architect/s</label>
-                                                <input type="text" name="architects[]" id="architects[]" value="{{ old('architects[]') }}" autocomplete="architects" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('architects.*') border-red-500 @enderror" placeholder="Architect 1, Architect 2">
-                                                <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('architects.*') }}</div>
+                                                <label for="engineers[]" class="block text-sm font-medium text-gray-700">Engineer/s</label>
+                                                <input type="text" name="engineers[]" id="engineers[]" value="{{ old('engineers[]') }}" autocomplete="engineers" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('engineers.*') border-red-500 @enderror" placeholder="Engineer 1, Engineer 2">
+                                                <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('engineers.*') }}</div>
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3">

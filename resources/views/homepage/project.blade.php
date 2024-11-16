@@ -161,9 +161,12 @@
                                 <li>
                                     <span class="data">Collaboration:</span> <span class="value">{{ $project->collaborators }}</span>
                                 </li>
-                                <!-- <li>
-                                    <span class="data">Scope:</span> <span class="value">{{ $project->types[0] }}</span>
-                                </li> -->
+                                <li>
+                                    <span class="data">Engineering Team:</span>
+                                        @foreach ($project->engineers as $index => $engineer)
+                                            <span class="value">{{ $engineer }}</span>
+                                        @endforeach
+                                </li>
                                 <li>
                                     <span class="data">Year:</span> <span class="value">{{ $project->year }}</span>
                                 </li>

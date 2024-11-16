@@ -131,9 +131,9 @@
 
                                         <div class="grid grid-cols-6 gap-6">
                                             <div class="col-span-6 sm:col-span-3">
-                                                <label for="architects[]" class="block text-sm font-medium text-gray-700">Architect/s</label>
-                                                <input type="text" name="architects[]" id="architects[]" value="{{ old('architects.0', $project->architects[0] ?? '') }}" autocomplete="architects" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('architects.*') border-red-500 @enderror" placeholder="Architect 1, Architect 2">
-                                                <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('architects.*') }}</div>
+                                                <label for="engineers[]" class="block text-sm font-medium text-gray-700">Engineer/s</label>
+                                                <input type="text" name="engineers[]" id="engineers[]" value="{{ old('engineers.0', $project->engineers[0] ?? '') }}" autocomplete="engineers" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('engineers.*') border-red-500 @enderror" placeholder="Engineer 1, Engineer 2">
+                                                <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('engineers.*') }}</div>
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3">
@@ -155,7 +155,7 @@
 
                                             <div class="col-span-6 sm:col-span-3">
                                                 <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
-                                                {{-- <input type="text" name="status" id="status" value="{{ old('status') }}" autocomplete="status" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('architects.*') border-red-500 @enderror"> --}}
+                                                {{-- <input type="text" name="status" id="status" value="{{ old('status') }}" autocomplete="status" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('engineers.*') border-red-500 @enderror"> --}}
 
                                                 <select id="status" name="status" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 h-10 w-full py-0 pl-2 pr-7 border-gray-300 bg-transparent text-gray-500 sm:text-sm rounded-md">
                                                     <option @if (old('status', $project->status) == "Planning") {{ 'selected' }} @endif>Planning</option>
@@ -164,7 +164,7 @@
                                                     <option @if (old('status', $project->status) == "Finished") {{ 'selected' }} @endif>Finished</option>
                                                 </select>
 
-                                                <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('architects.*') }}</div>
+                                                <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('engineers.*') }}</div>
                                             </div>
                                         </div>
 

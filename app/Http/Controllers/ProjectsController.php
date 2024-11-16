@@ -69,7 +69,7 @@ class ProjectsController extends Controller
         $project->story_num = $request->input('story_num');
         $project->site_area = $request->input('site_area');
         $project->floor_area = $request->input('floor_area');
-        $project->architects = $request->input('architects');
+        $project->engineers = $request->input('engineers');
         $project->client = $request->input('client');
         $project->location = $request->input('location');
         $project->status = $request->input('status');
