@@ -159,8 +159,13 @@
                                     <span class="data">Size:</span> <span class="value">{{ $project->story_num }}</span>
                                 </li>
                                 <li>
-                                    <span class="data">Collaboration:</span> <span class="value">{{ $project->collaborators }}</span>
+                                    <span class="data">Design Stage:</span> <span class="value">{{ $project->status }}</span>
                                 </li>
+                                @if ($project->collaborators.length > 0)
+                                    <li>
+                                        <span class="data">Collaboration:</span> <span class="value">{{ $project->collaborators }}</span>
+                                    </li>
+                                @endif
                                 <li>
                                     <span class="data">Engineering Team:</span>
                                         <span class="value">
