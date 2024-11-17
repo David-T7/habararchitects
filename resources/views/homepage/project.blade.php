@@ -161,7 +161,7 @@
                                 <li>
                                     <span class="data">Design Stage:</span> <span class="value">{{ $project->status }}</span>
                                 </li>
-                                @if (($project->collaborators).length > 0)
+                                @if ($project->collaborators->count() > 0)
                                     <li>
                                         <span class="data">Collaboration:</span> <span class="value">{{ $project->collaborators }}</span>
                                     </li>
