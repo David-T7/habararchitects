@@ -1,5 +1,68 @@
 @extends('layouts/mainlayout')
 
+@section('page-style')
+<style>
+    /* Style for the image */
+    .image {
+        width: 400px; /* Adjust size of the image */
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .image:hover {
+        opacity: 0.7;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 999; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        padding-top: 10rem;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9); /* Black with opacity */
+    }
+
+    /* Modal Content (the image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%; /* You can adjust the size */
+        max-width: 1100px; /* Max size */
+    }
+
+    /* Caption Text (optional) */
+    #caption {
+        text-align: center;
+        color: #ccc;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+@endsection
+
 @section('page-content')
 <!-- Page Header -->
 <div class="page_header">
@@ -27,7 +90,7 @@
                 <div class="col-lg-8 col-md-8">
                     <div class="post-image">
                         @php $images = json_decode($project->images->project_pictures,true); @endphp
-                        <img src="/img/projects/{{ $project->id }}/main/{{ $images[0] }}" alt="image">
+                        <img src="/img/projects/{{ $project->id }}/main/{{ $images[0] }}" alt="{{$project->title}}" id="project-image-0">
                     </div>
                     <div class="project-details_inner">
                         <div class="post_content">
@@ -42,7 +105,7 @@
                                     <ul class="blocks-gallery-grid">
                                         <li class="blocks-gallery-item mb-0 me-0">
                                             <figure>
-                                                <img src="/img/projects/{{ $project->id }}/{{ $images[1] }}" alt="img" class="block-image">
+                                                <img src="/img/projects/{{ $project->id }}/{{ $images[1] }}" alt="{{$project->title}}" class="block-image" id="project-image-1">
                                             </figure>
                                         </li>
                                     </ul>
@@ -65,7 +128,7 @@
                                             @if($index > 1)
                                                 <li class="blocks-gallery-item">
                                                     <figure>
-                                                        <img src="/img/projects/{{ $project->id }}/{{ $image }}" alt="img" class="block-image">
+                                                        <img src="/img/projects/{{ $project->id }}/{{ $image }}" alt="{{$project->title}}" class="block-image" id="project-image-{{ $index }}">
                                                         <!-- <div class="popup-btn"><a href="/img/projects/{{ $project->id }}/{{ $image }}" data-fancybox="images"><i class="bi bi-plus"></i></a></div> -->
                                                     </figure>
                                                 </li>
@@ -200,4 +263,48 @@
         </div>
     </section>
 </main>
+
+<!-- Modal for showing the image in a popup -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <span class="close">&times;</span>
+    <img class="modal-content" id="prj_img">
+    <div id="caption"></div>
+</div>
+@endsection
+
+@section('page-script')
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("prj_img");
+    var captionText = document.getElementById("caption");
+
+    // Event listener for clicks on any image
+    document.body.addEventListener('click', function(event) {
+        // Check if the clicked element is an image with the id starting with 'project-image'
+        if (event.target && event.target.id && event.target.id.startsWith('project-image')) {
+            modal.style.display = "block"; // Show the modal
+            modalImg.src = event.target.src; // Set the image source in the modal
+            captionText.innerHTML = event.target.alt; // Set the caption (optional)
+        }
+
+        if (event.target.closest('figure')) {
+            var img = event.target.querySelector('img');
+
+            // If an <img> is found, set the modal image source
+            if (img) {
+                modal.style.display = "block"; // Show the modal
+                modalImg.src = img.src; // Set the image source in the modal
+                captionText.innerHTML = img.alt || "No caption"; // Set the caption (optional)
+            }
+        }
+    });
+
+    // When the user clicks on <span> (x), close the modal
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        modal.style.display = "none"; // Hide the modal
+    }
+</script>
 @endsection

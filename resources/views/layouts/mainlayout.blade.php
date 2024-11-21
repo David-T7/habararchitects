@@ -15,7 +15,7 @@
         
         <!-- Styles Include -->
         <link rel="stylesheet" href="/css/style.css">
-        
+        @yield('page-style')
     </head>
 
 
@@ -268,5 +268,7 @@
                 }
             });
         </script>
+
+        @yield('page-script')
     </body>
 </html> 
