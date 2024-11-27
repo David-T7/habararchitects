@@ -105,8 +105,8 @@
                     <div class="icon_box">
                         <h6>01</h6>
                         <img src="/img/icon_box/d1.svg" alt="Icon Box">
-                        <h4 class="text-white"><a href="#">Urban Design</a></h4>
-                        <p class="text-gray-600">Habar Architects Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident enim numquam recusandae nobis corporis mollitia deleniti quaerat cum cumque aperiam dicta, maiores quos eveniet? Vitae eum suscipit quisquam dolore non.</p>
+                        <h4 class="text-white"><a href="#">Architecture Design</a></h4>
+                        <p class="text-gray-600" style="text-align: justify;">Our architecture design team specializes in creating innovative and functional spaces that harmonize with their surroundings. We focus on understanding our clients' visions and translating them into architectural masterpieces that are not only aesthetically pleasing but also sustainable and practical. From residential homes to commercial buildings, our designs prioritize both form and function, ensuring that each structure serves its intended purpose while enhancing the overall environment.</p>
                         <div class="arrow_effect">
                             <a href="#"><span class="crossline1"></span><span class="crossline2"></span></a>
                         </div>
@@ -117,7 +117,7 @@
                         <h6>02</h6>
                         <img src="/img/icon_box/d1.svg" alt="Icon Box">
                         <h4 class="text-white"><a href="#">Interior Design</a></h4>
-                        <p class="text-gray-600">Habar Architects Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident enim numquam recusandae nobis corporis mollitia deleniti quaerat cum cumque aperiam dicta, maiores quos eveniet? Vitae eum suscipit quisquam dolore non.</p>
+                        <p class="text-gray-600" style="text-align: justify;">Our interior design services aim to transform spaces into inviting and functional environments. We believe that interiors should reflect the personality and lifestyle of their occupants. Our team works closely with clients to curate designs that incorporate color, texture, and furnishings, creating cohesive and harmonious spaces. Whether it’s a cozy home, a vibrant office, or a luxurious hotel, we focus on maximizing comfort and style while ensuring that every detail aligns with the client’s vision.</p>
                         <div class="arrow_effect">
                             <a href="#"><span class="crossline1"></span><span class="crossline2"></span></a>
                         </div>
@@ -128,7 +128,7 @@
                         <h6>03</h6>
                         <img src="/img/icon_box/d1.svg" alt="Icon Box">
                         <h4 class="text-white"><a href="#">Landscape Design</a></h4>
-                        <p class="text-gray-600">Habar Architects Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident enim numquam recusandae nobis corporis mollitia deleniti quaerat cum cumque aperiam dicta, maiores quos eveniet? Vitae eum suscipit quisquam dolore non.</p>
+                        <p class="text-gray-600" style="text-align: justify;">We understand the importance of outdoor spaces in enhancing the overall aesthetic and functionality of a property. Our landscape design services focus on creating beautiful and sustainable outdoor environments that complement architecture and interior design. From gardens and parks to commercial landscapes, we incorporate native plants, water features, and thoughtful layouts to create inviting spaces that promote relaxation and enjoyment.</p>
                         <div class="arrow_effect">
                             <a href="#"><span class="crossline1"></span><span class="crossline2"></span></a>
                         </div>
@@ -138,8 +138,8 @@
                     <div class="icon_box">
                         <h6>04</h6>
                         <img src="/img/icon_box/d1.svg" alt="Icon Box">
-                        <h4 class="text-white"><a href="#">Landscape Design</a></h4>
-                        <p class="text-gray-600">Habar Architects Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident enim numquam recusandae nobis corporis mollitia deleniti quaerat cum cumque aperiam dicta, maiores quos eveniet? Vitae eum suscipit quisquam dolore non.</p>
+                        <h4 class="text-white"><a href="#">Urban Design</a></h4>
+                        <p class="text-gray-600" style="text-align: justify;">Our urban design team is dedicated to shaping vibrant and sustainable communities. We approach urban design with a focus on enhancing the quality of life for residents while promoting environmental sustainability. Our projects include public spaces, transportation systems, and community developments that encourage social interaction and connectivity. We strive to create urban environments that are not only functional but also foster a sense of belonging and community.</p>
                         <div class="arrow_effect">
                             <a href="#"><span class="crossline1"></span><span class="crossline2"></span></a>
                         </div>
@@ -149,8 +149,8 @@
                     <div class="icon_box">
                         <h6>05</h6>
                         <img src="/img/icon_box/d1.svg" alt="Icon Box">
-                        <h4 class="text-white"><a href="#">Urban Design</a></h4>
-                        <p class="text-gray-600">Habar Architects Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident enim numquam recusandae nobis corporis mollitia deleniti quaerat cum cumque aperiam dicta, maiores quos eveniet? Vitae eum suscipit quisquam dolore non.</p>
+                        <h4 class="text-white"><a href="#">Project Design</a></h4>
+                        <p class="text-gray-600" style="text-align: justify;">In addition to our architectural and design services, we also offer product design solutions that enhance everyday living. Our product design team focuses on creating functional and aesthetically pleasing items that improve user experience. From furniture to fixtures, we prioritize innovation and usability, ensuring that each product meets the needs of its users while reflecting contemporary design trends.</p>
                         <div class="arrow_effect">
                             <a href="#"><span class="crossline1"></span><span class="crossline2"></span></a>
                         </div>
@@ -160,8 +160,8 @@
                     <div class="icon_box">
                         <h6>06</h6>
                         <img src="/img/icon_box/d1.svg" alt="Icon Box">
-                        <h4 class="text-white"><a href="#">Interior Design</a></h4>
-                        <p class="text-gray-600">Habar Architects Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident enim numquam recusandae nobis corporis mollitia deleniti quaerat cum cumque aperiam dicta, maiores quos eveniet? Vitae eum suscipit quisquam dolore non.</p>
+                        <h4 class="text-white"><a href="#">Project Management</a></h4>
+                        <p class="text-gray-600" style="text-align: justify;">Effective project management is crucial to the success of any design endeavor. Our project management services ensure that every project is executed smoothly, on time, and within budget. Our experienced team coordinates all aspects of the project, from initial planning and design to construction and final delivery. We maintain open communication with clients and stakeholders throughout the process, ensuring that their vision is realized while adhering to the highest standards of quality and efficiency.</p>
                         <div class="arrow_effect">
                             <a href="#"><span class="crossline1"></span><span class="crossline2"></span></a>
                         </div>
