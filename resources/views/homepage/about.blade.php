@@ -40,7 +40,7 @@
         <div class="container">
             <div class="video_post">
                 <div class="ytube_video">
-                    <iframe id="ytvideo" src="" allow="autoplay;" allowfullscreen></iframe>
+                    <iframe id="ytvideo" src="video/iec.mp4" allow="autoplay;" allowfullscreen></iframe>
                     <div class="post_content">
                         <div class="ytplay_btn"><i class="bi bi-play-fill"></i></div>
                         <img src="/img/bg/video_bg.jpg" alt="video">
@@ -193,15 +193,31 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="team-block">
-                                <img src="/img/team/1.jpg" alt="img">
+                                <img src="/img/team/elias.jpg" alt="img">
                                 <h5 class="text-white"><a href="#">Elias Walalign</a></h5>
-                                <h6 class="text-uppercase text-olive">Founder</h6>
+                                <h6 class="text-uppercase text-olive">Founder / Principal Architect</h6>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <div class="team-block">
-                                <img src="/img/team/3.jpg" alt="img">
+                                <img src="/img/team/mekonen.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Mekonen Dereje</a></h5>
+                                <h6 class="text-uppercase text-olive">Design Manager</h6>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="team-block">
+                                <img src="/img/team/benoni.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Benoni Bergena</a></h5>
+                                <h6 class="text-uppercase text-olive">Project Manager</h6>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="team-block">
+                                <img src="/img/team/fahmi.jpg" alt="img">
                                 <h5 class="text-white"><a href="#">Fahmi Girma</a></h5>
                                 <h6 class="text-uppercase text-olive">Principle Architect</h6>
                             </div>
@@ -209,9 +225,81 @@
 
                         <div class="swiper-slide">
                             <div class="team-block">
-                                <img src="/img/team/4.jpg" alt="img">
-                                <h5 class="text-white"><a href="#">Benoni Chappi</a></h5>
-                                <h6 class="text-uppercase text-olive">ARCHITECT</h6>
+                                <img src="/img/team/meron.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Meron Tsehay</a></h5>
+                                <h6 class="text-uppercase text-olive">Project Architect</h6>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="team-block">
+                                <img src="/img/team/misker.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Misker Gebru</a></h5>
+                                <h6 class="text-uppercase text-olive">Project Architect</h6>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="team-block">
+                                <img src="/img/team/no_image.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Abel Getachew</a></h5>
+                                <h6 class="text-uppercase text-olive">Research and development</h6>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="team-block">
+                                <img src="/img/team/no_image.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Abel</a></h5>
+                                <h6 class="text-uppercase text-olive">Architect</h6>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="team-block">
+                                <img src="/img/team/no_image.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Hizkael</a></h5>
+                                <h6 class="text-uppercase text-olive">Architect</h6>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="team-block">
+                                <img src="/img/team/no_image.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Zerihun Dagne</a></h5>
+                                <h6 class="text-uppercase text-olive">Construction Project Manager</h6>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="team-block">
+                                <img src="/img/team/no_image.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Nebiyu</a></h5>
+                                <h6 class="text-uppercase text-olive">Site Engineer</h6>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="team-block">
+                                <img src="/img/team/no_image.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Matias Deriba</a></h5>
+                                <h6 class="text-uppercase text-olive">Site Architect</h6>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="team-block">
+                                <img src="/img/team/no_image.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Yonatan G.</a></h5>
+                                <h6 class="text-uppercase text-olive">Structural Designer</h6>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="team-block">
+                                <img src="/img/team/amanuel_a.jpg" alt="img">
+                                <h5 class="text-white"><a href="#">Amanuel Admasu</a></h5>
+                                <h6 class="text-uppercase text-olive">Electrical Engineer</h6>
                             </div>
                         </div>
                     </div>
