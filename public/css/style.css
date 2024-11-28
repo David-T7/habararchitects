@@ -19371,13 +19371,15 @@ body.left_menu .mr_menu {
 
 .gmapbox .map {
   width: 100%;
-  height: calc(5.5rem + 43.71429vw);
+  height: calc(5.5rem + 33.71429vw);
+  /* height: calc(5.5rem + 43.71429vw); */
   background-color: #e6e6e6;
 }
 
 @media (min-width: 1400px) {
   .gmapbox .map {
-    height: 43.75rem;
+    height: 33.75rem;
+    /* height: 43.75rem; */
   }
 }
 
@@ -19584,13 +19586,13 @@ body.left_menu .mr_menu {
 iframe, object, embed, iframe, object, iframe, video {
   width: 100%;
   height: 150%;
-  min-height: calc(5.5rem + 43.71429vw);
+  /* min-height: calc(5.5rem + 43.71429vw); */
   border: 0px solid #ffb7aa;
 }
 
 @media (min-width: 1400px) {
   iframe, object, embed, iframe, object, iframe, video {
-    min-height: 43.75rem;
+    /* min-height: 43.75rem; */
   }
 }
 

@@ -43,11 +43,48 @@
         font-size: 20px;
     }
 
+    .modal-controls {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+
+    #prevBtn {
+        top: 50%;
+        left: 0;
+        color: #fff;
+    }
+
+    #nextBtn {
+        top: 50%;
+        right: 0;
+        color: #fff;
+    }
+
+    .modal-controls button {
+        position: fixed;
+        background: none;
+        border: none;
+        color: #333;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .modal-controls button:hover {
+        /* background-color: #ddd; */
+    }
+
     /* The Close Button */
     .close {
         position: absolute;
         top: 15px;
-        right: 35px;
+        right: 30px;
         color: #f1f1f1;
         font-size: 40px;
         font-weight: bold;
@@ -60,6 +97,25 @@
         text-decoration: none;
         cursor: pointer;
     }
+    
+    /* Media Query for Phones */
+    @media only screen and (max-width: 767px) {
+        .modal-content {
+            margin-top: 100px;
+        }
+
+        #prevBtn {
+            top: 60%;
+        }
+
+        #nextBtn {
+            top: 60%;
+        }
+
+        .close {
+            right: 10px;
+        }
+    }    
 </style>
 @endsection
 
@@ -267,8 +323,12 @@
 <!-- Modal for showing the image in a popup -->
 <div id="myModal" class="modal">
     <!-- Modal content -->
-    <span class="close">&times;</span>
+    <span class="close"><i class="bi bi-x ml-0"></i></span>
     <img class="modal-content" id="prj_img">
+    <div class="modal-controls">
+        <button id="prevBtn"><i class="bi bi-chevron-left"></i></button>
+        <button id="nextBtn"><i class="bi bi-chevron-right"></i></button>
+    </div>
     <div id="caption"></div>
 </div>
 @endsection
@@ -306,5 +366,86 @@
     span.onclick = function() {
         modal.style.display = "none"; // Hide the modal
     }
+
+
+    // Get the previous and next buttons
+    // Change the selectors to match your HTML IDs
+var prevButton = document.getElementById('prevBtn');
+var nextButton = document.getElementById('nextBtn');
+
+// Change selector to match your image IDs
+var modalImages = document.querySelectorAll('[id^="project-image"]');
+var modalCurrentIndex = 0;
+
+// Add console log to debug
+console.log('Number of images found:', modalImages.length);
+
+// Check if buttons exist before adding listeners
+if (prevButton && nextButton) {
+    prevButton.addEventListener('click', showPreviousImage);
+    nextButton.addEventListener('click', showNextImage);
+}
+
+function showPreviousImage() {
+    modalCurrentIndex = (modalCurrentIndex - 1 + modalImages.length) % modalImages.length;
+    modalImg.src = modalImages[modalCurrentIndex].src;
+    if (captionText) {
+        captionText.innerHTML = modalImages[modalCurrentIndex].alt;
+    }
+}
+
+function showNextImage() {
+    modalCurrentIndex = (modalCurrentIndex + 1) % modalImages.length;
+    modalImg.src = modalImages[modalCurrentIndex].src;
+    if (captionText) {
+        captionText.innerHTML = modalImages[modalCurrentIndex].alt;
+    }
+}
+
+
+    // First, collect all images
+    const images = document.querySelectorAll('[id^="project-image"]');
+    let currentIndex = 0;
+
+    // Modify your existing click handler to set the currentIndex
+    document.body.addEventListener('click', function(event) {
+        if (event.target && event.target.id && event.target.id.startsWith('project-image')) {
+            modal.style.display = "block";
+            modalImg.src = event.target.src;
+            captionText.innerHTML = event.target.alt;
+            // Set the current index when opening modal
+            currentIndex = Array.from(images).findIndex(img => img === event.target);
+        }
+
+        if (event.target.closest('figure')) {
+            var img = event.target.querySelector('img');
+            if (img) {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                captionText.innerHTML = img.alt || "No caption";
+                // Set the current index here too
+                currentIndex = Array.from(images).findIndex(image => image === img);
+            }
+        }
+    });
+
+    // Your keyboard navigation code should work now
+    document.addEventListener('keydown', function(e) {
+        if (modal.style.display === "block") {  // Only if modal is open
+            if (e.key === "ArrowLeft") {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                modalImg.src = images[currentIndex].src;
+                captionText.innerHTML = images[currentIndex].alt;
+            }
+            else if (e.key === "ArrowRight") {
+                currentIndex = (currentIndex + 1) % images.length;
+                modalImg.src = images[currentIndex].src;
+                captionText.innerHTML = images[currentIndex].alt;
+            }
+            else if (e.key === "Escape") {
+                modal.style.display = "none";
+            }
+        }
+    });
 </script>
 @endsection

@@ -11,7 +11,12 @@
             <div class="mission_top_part">
                 <div class="section-header text-center">
                     <h6 class="text-white text-uppercase">About Us</h6>
-                    <p class="text-gray-600">Let's combine your ideas and our expertise.</p>
+                    <!-- <p class="text-gray-900">Let's combine your ideas and our expertise.</p> -->
+                    <p class="text-small">Welcome to HABAR Architects, where we believe 
+                        that great design is a process guided by specific parameters rather than personal preferences. 
+                        Our philosophy centers around the idea that each project is unique, shaped by its context and 
+                        the aspirations of our clients. By focusing on defined design parameters, we ensure that our 
+                        output is innovative, functional, and tailored to meet the distinct needs of each project.</p>
                 </div>
                 <div class="has_line"></div>
                 <img src="/img/bg/about_bg.jpg" alt="">
@@ -26,7 +31,7 @@
                     </div>
                     <div class="col-lg-6 ps-lg-4">
                         <div class="mission_content">
-                            <p>Our architects have extensive experience with a wide array of project types ranging from multi-million dollar facilities to smaller tenant finishes. 
+                            <p style="text-align: justify;">Our architects have extensive experience with a wide array of project types ranging from multi-million dollar facilities to smaller tenant finishes. 
                                 Whether it’s new construction, renovation or remodel, our professionals understand the intricacies and specific characteristics that each type of structure demands. 
                                 As with all of our projects, Fusion Architects will approach yours with an innovative eye, integration of technology, preservation of existing elements when desired, and attention to sustainability.</p>
                         </div>
@@ -40,7 +45,7 @@
         <div class="container">
             <div class="video_post">
                 <div class="ytube_video">
-                    <iframe id="ytvideo" src="video/iec.mp4" allow="autoplay;" allowfullscreen></iframe>
+                    <iframe id="ytvideo" src="video/iec.mp4" allowfullscreen></iframe>
                     <div class="post_content">
                         <div class="ytplay_btn"><i class="bi bi-play-fill"></i></div>
                         <img src="/img/bg/video_bg.jpg" alt="video">
@@ -51,7 +56,7 @@
     </div>
 
     <section class="funfacts pd-top-lg bg_2" id="funfacts">
-        <div class="container">
+        <!-- <div class="container">
             <div class="row">
                 <div class="col">
 
@@ -95,10 +100,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
-    <section class="services inner pb-0">
+    <section class="services inner pb-0 pt-0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4" data-aos="fade-up" data-aos-duration="500">

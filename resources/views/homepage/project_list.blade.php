@@ -38,7 +38,7 @@
                             <img class="item_image" src="{{ asset('/img/projects/'.$project->id.'/main/'.$images[0]) }}" alt="">
                             <div class="works-info">
                                 <div class="label-text">
-                                    <h6><a href="#">{{ $project->code_name }}</a></h6>
+                                    <!-- <h6><a href="#">{{ $project->code_name }}</a></h6> -->
                                     <h5><a href="#">{{ $project->title }}</a></h5>
                                     <div class="details_link"><a href="{{ route('habar.project', $project->id ?? '1') }}"><span class="link_text">View Project</span> <span class="link_icon"><span class="line"></span> <span class="circle"><span class="dot"></span></span></span></a></div>
                                 </div>

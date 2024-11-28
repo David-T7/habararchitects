@@ -19,7 +19,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 1,
                 'title'         => 'TOP LUXURY APARTMENT',
-                'code_name'     => 'FIVE IN A ROW',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -46,7 +45,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 2,
                 'title'         => 'AMIBARA MIXED COMPLEX',
-                'code_name'     => 'THE NEIGHBORHOOD',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -78,7 +76,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 3,
                 'title'         => 'TOP HOTEL',
-                'code_name'     => 'THE CROWN',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -104,7 +101,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 4,
                 'title'         => 'AL-IMRAN MOSQUE',
-                'code_name'     => 'RAIN OF LIGHTS',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -133,7 +129,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 5,
                 'title'         => 'DE-VITA MIXED DEVLOPMENT',
-                'code_name'     => 'THE GIANTS',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural Design"]',
@@ -165,7 +160,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 6,
                 'title'         => 'DE-VITA MIXED DEVELOPMENT',
-                'code_name'     => 'THE INSIDE-OUT CUBE',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural Design"]',
@@ -198,7 +192,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 7,
                 'title'         => 'HILL BOTTOM REAL ESTATE',
-                'code_name'     => 'THE DOMINO',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural Design"]',
@@ -227,7 +220,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 8,
                 'title'         => 'HORRA CORPORATION FACTORY',
-                'code_name'     => 'THE BEAN',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Façade Renovation", "Interior Design"]',
@@ -255,7 +247,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 9,
                 'title'         => 'AGANA INTERNATIONAL APT.',
-                'code_name'     => 'THE HOVERER',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Façade", "Interior Design"]',
@@ -287,7 +278,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 10,
                 'title'         => 'MNS APARTMENT',
-                'code_name'     => 'THE LINE',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -317,7 +307,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 11,
                 'title'         => 'RIVERSIDE APARTMENT',
-                'code_name'     => '',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -345,7 +334,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 12,
                 'title'         => 'GRAR INT.',
-                'code_name'     => 'MIXED BUILDING',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Façade Design", "Interior Design"]',
@@ -374,7 +362,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 13,
                 'title'         => 'IEC YOUTH CENTER',
-                'code_name'     => 'THE REBEL',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -402,7 +389,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 14,
                 'title'         => 'HORRA HEAD OFFICE',
-                'code_name'     => 'THE WAFFLE',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural Design"]',
@@ -433,7 +419,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 15,
                 'title'         => 'BISET HOTEL',
-                'code_name'     => '',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Modification", "Interior Design"]',
@@ -461,7 +446,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 16,
                 'title'         => 'LEM LEM HOTEL',
-                'code_name'     => '',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -489,7 +473,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 17,
                 'title'         => 'SENNA HOTEL',
-                'code_name'     => 'PENDENTIVES',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -527,7 +510,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 18,
                 'title'         => 'HOSAE REAL ESTATE',
-                'code_name'     => '',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Master Planing", "Interior Design"]',
@@ -555,7 +537,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 19,
                 'title'         => 'ABIY BEHILU RESIDENCE',
-                'code_name'     => 'MIRROR',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -589,7 +570,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 20,
                 'title'         => 'ADEM KEDIR RESIDENCE',
-                'code_name'     => 'GLASS HOUSE',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -619,7 +599,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 21,
                 'title'         => 'FEVEN SAHELE RESIDENCE',
-                'code_name'     => '',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -646,7 +625,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 22,
                 'title'         => 'WOSEN APARTMENT',
-                'code_name'     => '',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -674,7 +652,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 23,
                 'title'         => 'VILLA YONATAN',
-                'code_name'     => '',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
@@ -702,7 +679,6 @@ class ProjectsTableSeeder extends Seeder
             [
                 'id'            => 24,
                 'title'         => 'HORRA COFFEE EXPERIENCE',
-                'code_name'     => 'THE APEX3',
                 'city'          => 'Addis Ababa',
                 'country'       => 'Ethiopia',
                 'types'         => '["Architectural", "Interior Design"]',
