@@ -16,7 +16,7 @@ class PagesController extends Controller
             'pageTitle' => 'Habar Architects'
         );
         
-        $projects = Project::where('featured', 1)->latest()->get();
+        $projects = Project::where('featured', 1)->get();
         
         return view('homepage.indexPage', compact('projects'))->with($pageData);
     }
@@ -50,7 +50,7 @@ class PagesController extends Controller
             'pageTitle' => 'Habar Architects — Project List'
         );
         
-        $projects = Project::where('isActive', 1)->latest()->get();
+        $projects = Project::where('isActive', 1)->get();
         
         return view('homepage.project_list', compact('projects'))->with($pageData);
     }

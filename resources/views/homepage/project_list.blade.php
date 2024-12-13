@@ -23,9 +23,9 @@
             <div class="portfolio-filters-content">
                 <div class="filters-button-group">
                     <button class="button is-checked" data-filter="*">All<sup class="filter-count"></sup></button>
-                    <button class="button" data-filter=".exterior">Exterior<sup class="filter-count"></sup></button>
-                    <button class="button" data-filter=".residences">Residences<sup class="filter-count"></sup></button>
-                    <button class="button" data-filter=".interiors">Interiors<sup class="filter-count"></sup></button>
+                    <button class="button" data-filter=".architecture">Architecture<sup class="filter-count"></sup></button>
+                    <button class="button" data-filter=".interior">Interior<sup class="filter-count"></sup></button>
+                    <button class="button" data-filter=".urban">Urban<sup class="filter-count"></sup></button>
                     <button class="button" data-filter=".landscape">Landscape<sup class="filter-count"></sup></button>
                 </div>
             </div>
