@@ -6,10 +6,10 @@
     <div class="page_header_inner">
         <div class="container">
             <div class="page_header_content d-flex align-items-center justify-content-between">
-                <h2 class="heading">Blog</h2>
+                <h2 class="heading">News</h2>
                 <ul class="breadcrumb d-flex align-items-center">
                     <li><a href="{{ route('habar.home') }}">Home</a></li>
-                    <li class="active">Blog</li>
+                    <li class="active">News</li>
                 </ul>
             </div>
         </div>
