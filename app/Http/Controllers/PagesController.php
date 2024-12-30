@@ -66,7 +66,7 @@ class PagesController extends Controller
     }
     public function openHabarNews($id)
     {
-        $news = News::findOrFail($id);
+        $news = News::with('images')->findOrFail($id);
         // $images = Image::findOrFail($id);
 
         // $images_array = json_decode($images->news_pictures);

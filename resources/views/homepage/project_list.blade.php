@@ -31,7 +31,7 @@
             </div>
             <div class="grid gutter-20 grid-1 clearfix"> 
                 <!-- <div class="grid-sizer"></div> -->
-                @foreach ($projects as $project)                  
+                @foreach ($projects as $project)
                     <div class="grid-item residences">
                         <div class="thumb">
                             @php $images = json_decode($project->images->project_pictures,true); @endphp

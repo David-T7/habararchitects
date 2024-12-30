@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -35,5 +36,10 @@ class News extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'postedBy');
+    }
+
+    public function images()
+    {
+        return $this->belongsTo(NewsImage::class, 'id', 'news_id',);
     }
 }
