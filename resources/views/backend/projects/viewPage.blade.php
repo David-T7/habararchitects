@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="md:flex-shrink-0 image-slider">
                                 
-                                    @php $images = json_decode($project->images->project_pictures,true); @endphp
+                                    @php $images = $project->images ? json_decode($project->images->project_pictures, true) : []; @endphp
                                 
                                     @if(is_array($images) && !empty($images))
                                         @foreach ($images as $index => $image)
@@ -70,9 +70,9 @@
                                         </div>
 
                                         <div class="bg-indigo-100 px-4 py-5 sm:grid sm:grid-cols-7 sm:gap-4 sm:px-6">
-                                            <dt class="text-sm font-medium text-gray-500">Architect/s</dt>
+                                            <dt class="text-sm font-medium text-gray-500">Engineer/s</dt>
                                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-6">
-                                                @foreach ($project->architects ?? '' as $project_architect)
+                                                @foreach ($project->engineers ?? [] as $project_architect)
                                                     {{ $project_architect }}@if(!$loop->last),@endif
                                                 @endforeach
                                             </dd>
@@ -96,14 +96,14 @@
                                         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-7 sm:gap-4 sm:px-6">
                                             <dt class="text-sm font-medium text-gray-500">Project Scope</dt>
                                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-6">
-                                                @foreach ($project->types ?? '' as $type)
+                                                @foreach ($project->types ?? [] as $type)
                                                     {{ $type }}@if(!$loop->last),@endif
                                                 @endforeach
                                             </dd>
                                         </div>
                                         <div class="bg-indigo-100 px-4 py-5 sm:grid sm:grid-cols-7 sm:gap-4 sm:px-6">
                                             <dt class="text-sm font-medium text-gray-500">Project Budget</dt>
-                                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ number_format($project->budget ?? '', 2, '.', ',') }} {{ $project->currency }}</dd>
+                                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ number_format($project->budget ?? 0, 2, '.', ',') }} {{ $project->currency }}</dd>
                                         </div>
                                         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-7 sm:gap-4 sm:px-6">
                                             <dt class="text-sm font-medium text-gray-500">Posted by</dt>

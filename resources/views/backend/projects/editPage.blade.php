@@ -57,8 +57,10 @@
                                             </div>
                                         @endif
 
-                                        @php $images = json_decode($project->images->project_pictures,true); @endphp
-                                        <img class="h-full w-full object-cover" src="/img/projects/{{ $project->id }}/main/{{ $images[0] }}" alt="Project Picture">
+                                        @php $images = $project->images ? json_decode($project->images->project_pictures, true) : []; @endphp
+                                        @if (!empty($images))
+                                            <img class="h-full w-full object-cover" src="/img/projects/{{ $project->id }}/main/{{ $images[0] }}" alt="Project Picture">
+                                        @endif
 
                                         <div class="grid grid-cols-3 gap-6">
                                             <div class="col-span-6">
@@ -171,7 +173,7 @@
                                         <div class="grid grid-cols-6 gap-6">
                                             <div class="col-span-6 sm:col-span-3">
                                                 <label for="types[]" class="block text-sm font-medium text-gray-700">Project scope</label>
-                                                <input type="text" name="types[]" id="types[]" value="{{ old('types.0', $project->types[0]) }}" autocomplete="types" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('types.*') border-red-500 @enderror" placeholder="Architectural + Interior Design">
+                                                <input type="text" name="types[]" id="types[]" value="{{ old('types.0', $project->types[0] ?? '') }}" autocomplete="types" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md @error('types.*') border-red-500 @enderror" placeholder="Architectural + Interior Design">
                                                 <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('types.*') }}</div>
                                             </div>
 

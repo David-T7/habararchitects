@@ -69,6 +69,18 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    /**
+     * Check a permission through the user's roles (role_user pivot or the role_id column).
+     */
+    public function hasPermission(string $title): bool
+    {
+        $roleIds = $this->roles()->pluck('roles.id')->push($this->role_id)->filter()->unique();
+
+        return Permission::where('title', $title)
+            ->whereHas('roles', fn ($query) => $query->whereIn('roles.id', $roleIds))
+            ->exists();
+    }
+
     public function projects()
     {
         return $this->hasMany(Project::class, 'project_postedBy');

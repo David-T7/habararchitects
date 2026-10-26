@@ -52,8 +52,8 @@
                 @foreach ($projects as $project)
                     <div class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 relative min-w-full">
 
-                        @if ($project->images != null)
-                            @php $images = json_decode($project->images->project_pictures,true); @endphp
+                        @php $images = $project->images ? json_decode($project->images->project_pictures, true) : []; @endphp
+                        @if (!empty($images))
                             <img class="object-cover w-full h-64" src="{{ asset('/img/projects/'.$project->id.'/main/'.$images[0]) }}" alt="Project Picture">
                         @endif
 
@@ -66,40 +66,38 @@
 
                             <div class="mt-4 mb-6">
                                 <div class="flex items-center justify-between">
-                                    <div class="flex items-center">
-                                        
-                                        <img class="object-cover h-10 rounded-full" 
-                                        @if ($project->user->profile_photo_path)
-                                            src="/storage/{{ $project->user->profile_photo_path ?? '' }}"
-                                        @else
-                                            src="{{ $project->user->profile_photo_url }}"
-                                        @endif
-                                        alt="Posted By" style="max-height: 40px; max-width: 40px;">
+                                    @if ($project->user)
+                                        <div class="flex items-center">
 
-                                        <a href="#" class="mx-2 font-semibold text-gray-700 dark:text-gray-200">
-                                            {{ $project->user->name }}
-                                        </a>
-                                    </div>
+                                            <img class="object-cover h-10 rounded-full"
+                                            @if ($project->user->profile_photo_path)
+                                                src="/storage/{{ $project->user->profile_photo_path }}"
+                                            @else
+                                                src="{{ $project->user->profile_photo_url }}"
+                                            @endif
+                                            alt="Posted By" style="max-height: 40px; max-width: 40px;">
+
+                                            <a href="#" class="mx-2 font-semibold text-gray-700 dark:text-gray-200">
+                                                {{ $project->user->name }}
+                                            </a>
+                                        </div>
+                                    @else
+                                        <div></div>
+                                    @endif
                                     <span class="mx-1 text-xs text-gray-600 dark:text-gray-300">{{ Carbon\Carbon::parse($project['created_at'] ?? '2021-04-29 16:00:00')->format('d M Y') }}</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="flex items-center bg-gray-900 grid grid-cols-2 bottom-0 w-full">
-                            <a href="{{ route('post_projects.show', $project->id) }}" class="bg-indigo-500 text-white hover:text-gray-300 px-10 py-3 text-center">View</a>
-                            <a href="{{ route('post_projects.edit', $project->id) }}" class="bg-yellow-600 text-white hover:text-gray-300 px-10 py-3 text-center">Edit</a>
+                        <div class="bg-gray-900 grid grid-cols-3 bottom-0 w-full">
+                            <a href="{{ route('post_projects.show', $project->id) }}" class="bg-indigo-500 text-white hover:text-gray-300 py-3 text-center">View</a>
+                            <a href="{{ route('post_projects.edit', $project->id) }}" class="bg-yellow-600 text-white hover:text-gray-300 py-3 text-center">Edit</a>
+                            <form class="bg-red-600" action="{{ route('post_projects.destroy', $project->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this project?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="w-full py-3 text-white hover:text-gray-300 bg-transparent">Delete</button>
+                            </form>
                         </div>
-                        @can('user_access')
-                            <div class="flex items-center bg-gray-900 grid grid-cols-3 bottom-0 w-full">
-                                <a href="{{ route('post_projects.show', $project->id) }}" class="bg-blue-600 text-white hover:text-gray-300 px-10 py-3">View</a>
-                                <a href="{{ route('post_projects.edit', $project->id) }}" class="bg-red-600 text-white hover:text-gray-300 px-10 py-3">Edit</a>
-                                <form class="inline-block px-10 py-3 bg-red-600" action="{{ route('post_projects.destroy', $project->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this project?');">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <input type="submit" class="hover:text-gray-300 text-white bg-transparent" value="Delete">
-                                </form>
-                            </div>
-                        @endcan
                     </div>
                 @endforeach
             </div>

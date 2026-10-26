@@ -321,36 +321,5 @@
         </div>
     </section>
 
-    <!-- Testimonial -->
-    <section class="testimonial box_padding">
-        <div class="has_line_lg"></div>
-        <div class="testimonial_inner bg-black" data-aos="zoom-in" data-aos-duration="500">
-            <!-- Swiper Testimonial -->
-            <div class="swiper swiper_testimonial">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="testimonial-block text-center">
-                            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla"</p>
-                            <h6 class="text-olive">Company #1</h6>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-block text-center">
-                            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla"</p>
-                            <h6 class="text-olive">Company #2</h6>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-block text-center">
-                            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla"</p>
-                            <h6 class="text-olive">Company #3</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
 </main>
 @endsection

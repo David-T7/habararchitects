@@ -28,7 +28,10 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        $projectCount = \App\Models\Project::count();
+        $recentProjects = \App\Models\Project::latest()->take(5)->get();
+
+        return view('dashboard', compact('projectCount', 'recentProjects'));
     })->name('dashboard');
         
     Route::resource('webpages', WebpagesController::class);

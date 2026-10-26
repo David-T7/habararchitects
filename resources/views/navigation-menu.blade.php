@@ -30,11 +30,13 @@
                             {{ __('Employees') }}
                         </x-nav-link>
                     @endcan
+                    {{-- Hidden until the news admin (NewsController) is built
                     @can('news_access')
                         <x-nav-link href="{{ route('post_news.index') }}" :active="request()->routeIs('post_news.*')">
                             {{ __('News Articles') }}
                         </x-nav-link>
                     @endcan
+                    --}}
                     
                     <x-nav-link href="/" target="_blank">
                         {{ __('Visit Website') }}
@@ -166,6 +168,11 @@
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @can('projects_access')
+                <x-responsive-nav-link href="{{ route('post_projects.index') }}" :active="request()->routeIs('post_projects.*')">
+                    {{ __('Projects') }}
+                </x-responsive-nav-link>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->

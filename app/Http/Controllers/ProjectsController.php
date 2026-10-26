@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Models\Image;
 use App\Models\Project;
 use App\Traits\StoreImageTrait;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ class ProjectsController extends Controller
     {
         abort_if(Gate::denies('projects_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $projects = Project::get();
+        $projects = Project::with(['user', 'images'])->latest()->get();
         $pageData = array (
             'pageTitle' => 'Habar Projects'
         );
@@ -144,9 +145,14 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy($project_id)
     {
-        File::deleteDirectory(public_path('/images/projects/project'.$project->id));
+        abort_if(Gate::denies('projects_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $project = Project::FindOrFail($project_id);
+
+        File::deleteDirectory(public_path('/img/projects/'.$project->id));
+        Image::where('project_id', $project->id)->delete();
 
         $project->delete();
 
