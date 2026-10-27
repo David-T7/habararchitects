@@ -45,7 +45,8 @@
         <div class="container">
             <div class="video_post">
                 <div class="ytube_video">
-                    <iframe id="ytvideo" src="video/iec.mp4" allowfullscreen></iframe>
+                    {{-- A <video> element never starts on its own; an <iframe> pointing at the .mp4 did (with sound). --}}
+                    <video id="ytvideo" src="/video/iec.mp4" controls preload="metadata" playsinline></video>
                     <div class="post_content">
                         <div class="ytplay_btn"><i class="bi bi-play-fill"></i></div>
                         <img src="/img/bg/video_bg.jpg" alt="video">

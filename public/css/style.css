@@ -21235,27 +21235,68 @@ body.bg-dark.bg-white .under-construction-page .under-construction-content .sear
   }
 }
 
-/* Footer: the large vertical "Contact" heading in white (the inner footer panel is black in both themes). */
-.footer .footer_inner .section-header h2, .footer .footer_inner .section-header .h2 {
-  color: #ffffff;
-}
-
-/* Footer panel in the theme's grey (bg-dark-300) instead of black, in both themes; its text stays white. */
+/* Footer, dark mode: panel in the theme's grey (bg-dark-300) instead of black. */
 .footer .footer_inner.bg-black {
   background-color: #2e2e2e !important;
 }
 
-/* Social icon circles were #2e2e2e too; step them up to bg-dark-400 so they stay visible on the grey panel. */
+/* The vertical "Contact" heading is a faint watermark, one step lighter than the panel (bg-dark-400). */
+.footer .footer_inner .section-header h2, .footer .footer_inner .section-header .h2 {
+  color: #545454;
+}
+
+/* Social icon circles were #2e2e2e too; step them up so they stay visible on the grey panel. */
 .footer .footer_inner .footer_social .social_list li a {
   background: #545454;
 }
 
-/* Light mode: one step lighter again (bg-dark-400), with the icon circles flipped to the darker grey. */
+/* Footer, light mode: near-white panel (bg-gray-100) with dark text, using the theme's light-mode colours. */
 body.bg-white .footer .footer_inner.bg-black {
-  background-color: #545454 !important;
+  background-color: #f2f2f2 !important;
+}
+
+/* Same faint watermark as dark mode, mirrored: a step darker than the panel (bg-gray-400, ~1.9:1 vs 1.8:1 in dark). */
+body.bg-white .footer .footer_inner .section-header h2, body.bg-white .footer .footer_inner .section-header .h2 {
+  color: #b2b2b2;
+}
+
+body.bg-white .footer .footer_inner .communication .info_body h5, body.bg-white .footer .footer_inner .communication .info_body .h5 {
+  color: #000000;
+}
+
+body.bg-white .footer .footer_inner .communication .info_body h6, body.bg-white .footer .footer_inner .communication .info_body .h6,
+body.bg-white .footer .footer_inner .terms_condition ul li a,
+body.bg-white .footer .footer_inner .copyright p {
+  color: #54595f;
+}
+
+body.bg-white .footer .footer_inner .terms_condition ul li a:hover {
+  color: #000000;
 }
 
 body.bg-white .footer .footer_inner .footer_social .social_list li a {
   background: #2e2e2e;
+}
+
+body.bg-white .footer .grid_lines .grid_line {
+  background-color: #e6e6e6 !important;
+}
+
+/* Footer logo: white version on the dark panel, red version on the light one. */
+.footer .footer_logo .dark_logo {
+  display: none;
+}
+
+body.bg-white .footer .footer_logo .light_logo {
+  display: none;
+}
+
+body.bg-white .footer .footer_logo .dark_logo {
+  display: inline-block;
+}
+/* About page video: a real <video> (no autoplay) in the slot the theme sized for an iframe. */
+.video_post .ytube_video video#ytvideo {
+  background: #000000;
+  object-fit: contain;
 }
 /*# sourceMappingURL=style.css.map */

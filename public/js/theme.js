@@ -511,9 +511,16 @@ Description: Mrittik is a Modern Architecture Theme
 
         // Youtube
         var $ytvideoTrigger = $(".ytplay_btn");
-        $ytvideoTrigger.on("click", function(evt) {  
+        $ytvideoTrigger.on("click", function(evt) {
             $(".ytube_video").addClass("play");
-            $("#ytvideo")[0].src += "?autoplay=1";
+            var player = $("#ytvideo")[0];
+            if (!player) return;
+            // A local <video> starts only on this click; a YouTube <iframe> is started via ?autoplay=1.
+            if (player.tagName === "VIDEO") {
+                player.play();
+            } else {
+                player.src += "?autoplay=1";
+            }
         });
 
         
