@@ -19,7 +19,14 @@
     </head>
 
 
-    <body class="bg-dark">
+    <body class="bg-dark bg-white">
+        <script>
+            // White mode by default; switch to dark before first paint only if the visitor chose it on this site
+            // (theme.js stores "light" for dark mode). The browser's own dark preference is deliberately ignored.
+            try {
+                if (localStorage.getItem("theme") === "light") document.body.classList.remove("bg-white");
+            } catch (e) {}
+        </script>
 
         <!-- preloader -->
         <div class="mry-preloader mry-active">

@@ -614,13 +614,15 @@ Description: Mrittik is a Modern Architecture Theme
         // Day-Night Mode Switcher
         var icon = document.getElementById("mode_switcher");
 
-        // Restore the saved mode ("dark" is stored when the white background is on)
-        let localData = localStorage.getItem("theme");
+        // Restore the saved mode ("dark" is stored when the white background is on, "light" for dark mode).
+        // White is the default: only an explicit dark choice made on this site turns it off.
+        let localData = null;
+        try { localData = localStorage.getItem("theme"); } catch (e) {}
 
-        if (localData === "dark") {
-            document.body.classList.add("bg-white");
-        } else {
+        if (localData === "light") {
             document.body.classList.remove("bg-white");
+        } else {
+            document.body.classList.add("bg-white");
         }
 
         if (icon) {

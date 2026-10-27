@@ -21226,4 +21226,36 @@ body.bg-dark.bg-white .under-construction-page .under-construction-content .sear
 body.bg-dark.bg-white .under-construction-page .under-construction-content .search_form .form-control-submit, body.bg-white .under-construction-page .under-construction-content .search_form .form-control-submit {
   color: #000000;
 }
+
+/*-- Habar overrides --*/
+/* Homepage slider: keep the slide text (project scope line) clear of the fixed header nav. */
+@media (min-width: 992px) {
+  .theme_slider_2 .swiper-slide .slider .slide_content .slide_content_wrapper {
+    padding-top: 8rem;
+  }
+}
+
+/* Footer: the large vertical "Contact" heading in white (the inner footer panel is black in both themes). */
+.footer .footer_inner .section-header h2, .footer .footer_inner .section-header .h2 {
+  color: #ffffff;
+}
+
+/* Footer panel in the theme's grey (bg-dark-300) instead of black, in both themes; its text stays white. */
+.footer .footer_inner.bg-black {
+  background-color: #2e2e2e !important;
+}
+
+/* Social icon circles were #2e2e2e too; step them up to bg-dark-400 so they stay visible on the grey panel. */
+.footer .footer_inner .footer_social .social_list li a {
+  background: #545454;
+}
+
+/* Light mode: one step lighter again (bg-dark-400), with the icon circles flipped to the darker grey. */
+body.bg-white .footer .footer_inner.bg-black {
+  background-color: #545454 !important;
+}
+
+body.bg-white .footer .footer_inner .footer_social .social_list li a {
+  background: #2e2e2e;
+}
 /*# sourceMappingURL=style.css.map */

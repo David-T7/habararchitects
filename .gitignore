@@ -1,6 +1,7 @@
 /.phpunit.cache
 /node_modules
-/public/build
+# public/build is committed on purpose: the cPanel host cannot run `npm run build`,
+# so rebuild locally and commit it whenever views or resources/css|js change.
 /public/hot
 /public/storage
 /public/img/
