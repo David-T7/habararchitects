@@ -33,8 +33,8 @@ class StoreProjectRequest extends FormRequest
             'types.*' => 'nullable|string|max:255',
             'featured' => 'required|boolean',
             'postedBy' => 'required|integer',
-            'project_pictures' => 'required|array',
-            'project_pictures.*' => 'image|max:10240',
+            'project_pictures' => 'required|array|min:1',
+            'project_pictures.*' => 'image|mimes:jpeg,jpg,png,gif,webp|max:10240',
         ];
     }
 }

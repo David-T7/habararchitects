@@ -12,29 +12,47 @@
     </x-slot>
 
     <div>
-        <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="flex flex-col">
 
-                <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-full">
+                <div class="w-full mx-auto bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="md:flex">
-                        <div class="">
+                        <div class="w-full">
                             <div class="bg-white shadow overflow-hidden sm:rounded-r-lg">
-                                <div class="px-4 py-5 sm:px-6 bg-red-700 text-white">
-                                    <h3 class="text-lg leading-6 font-medium">Project Information</h3>
-                                    <p class="mt-1 max-w-2xl text-sm">Extended details and overview.</p>
+                                <div class="px-4 py-5 sm:px-6 bg-red-700 text-white flex flex-wrap items-center justify-between gap-4">
+                                    <div>
+                                        <h3 class="text-lg leading-6 font-medium">Project Information</h3>
+                                        <p class="mt-1 max-w-2xl text-sm">Extended details and overview.</p>
+                                    </div>
+                                    <a href="{{ route('post_projects.edit', $project->id) }}" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white text-sm font-semibold text-red-700 shadow hover:bg-gray-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                        </svg>
+                                        Edit project
+                                    </a>
                                 </div>
-                                <div class="md:flex-shrink-0 image-slider">
-                                
-                                    @php $images = $project->images ? json_decode($project->images->project_pictures, true) : []; @endphp
-                                
-                                    @if(is_array($images) && !empty($images))
-                                        @foreach ($images as $index => $image)
-                                            @if($index == 0)
-                                                <img class="h-full w-full object-cover" src="{{ asset('/img/projects/'.$project->id.'/main/'.$image) }}" alt="Project Picture">
-                                            @elseif($index != 0)
-                                                <img class="h-full w-full object-cover" src="{{ asset('/img/projects/'.$project->id.'/'.$image) }}" alt="Project Picture">
-                                            @endif
-                                        @endforeach
+                                @php $imageUrls = $project->imageUrls(); @endphp
+                                <div class="md:flex-shrink-0 p-4 border-b border-gray-200">
+                                    @if (!empty($imageUrls))
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-sm font-medium text-gray-700">{{ count($imageUrls) }} {{ \Illuminate\Support\Str::plural('photo', count($imageUrls)) }}</p>
+                                            <a href="{{ route('post_projects.edit', $project->id) }}" class="text-sm text-indigo-600 hover:text-indigo-900">Manage photos</a>
+                                        </div>
+
+                                        <ul class="mt-3 grid grid-cols-1 gap-4">
+                                            @foreach ($imageUrls as $index => $url)
+                                                <li class="relative rounded-md overflow-hidden border border-gray-200 shadow-sm">
+                                                    <button type="button" x-data @click="$dispatch('open-lightbox', { urls: @js($imageUrls), index: {{ $index }} })" title="View photo" class="block w-full cursor-zoom-in">
+                                                        <img src="{{ $url }}" alt="Project photo {{ $index + 1 }}" class="h-80 sm:h-[28rem] w-full object-cover bg-gray-100 hover:opacity-90 transition">
+                                                    </button>
+                                                    @if ($index === 0)
+                                                        <span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-700 text-white text-xs">Cover</span>
+                                                    @endif
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @else
+                                        <p class="text-sm text-gray-500">No photos yet. <a href="{{ route('post_projects.edit', $project->id) }}" class="text-indigo-600 hover:text-indigo-900">Add some</a>.</p>
                                     @endif
                                 </div>
                                 <div class="border-t border-gray-200">
@@ -110,6 +128,10 @@
                                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-6">{{ $project->user->name ?? '' }}</dd>
                                         </div>
                                     </dl>
+                                </div>
+                                <div class="px-4 py-4 sm:px-6 bg-gray-50 border-t border-gray-200 flex justify-end gap-3">
+                                    <a href="{{ route('post_projects.index') }}" class="px-4 py-2 rounded-md border border-gray-300 text-sm font-semibold text-gray-700 hover:bg-white">Back to projects</a>
+                                    <a href="{{ route('post_projects.edit', $project->id) }}" class="px-4 py-2 rounded-md bg-red-700 text-sm font-semibold text-white hover:bg-red-800">Edit project</a>
                                 </div>
                             </div>
                         </div>
@@ -198,4 +220,5 @@
             </div>
         </div>
     </div>
+    <x-image-lightbox />
 </x-app-layout>

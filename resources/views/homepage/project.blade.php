@@ -157,6 +157,7 @@
                                 <p style="text-align: justify;">
                                     {{ $project->description }}
                                 </p>
+                                @isset($images[1])
                                 <figure class="block-gallery mb-0">
                                     <ul class="blocks-gallery-grid">
                                         <li class="blocks-gallery-item mb-0 me-0">
@@ -166,6 +167,7 @@
                                         </li>
                                     </ul>
                                 </figure>
+                                @endisset
 
                                 <!-- <h6 class="widget-title">
                                     Project Features

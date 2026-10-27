@@ -13,11 +13,11 @@
     </x-slot>
 
     <div>
-        <div class="max-w-4xl mx-auto md:py-10 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto md:py-10 sm:px-6 lg:px-8">
             <div class="md:mt-5 md:mt-0 md:col-span-6">
                 <div>
                     <div class="mt-10">
-                        <div class="mx-auto" style="width: 50%;">
+                        <div class="mx-auto w-full">
                             <form action="{{ route('post_projects.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 
@@ -74,7 +74,7 @@
                                         <div>
                                             <label for="description" class="block text-sm font-medium text-gray-700">Project description</label>
                                             <div class="mt-1">
-                                                <textarea id="description" name="description" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md @error('description') border-red-500 @enderror" placeholder="Enter description here ...">{{ old('description') }}</textarea>
+                                                <textarea id="description" name="description" rows="10" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md @error('description') border-red-500 @enderror" placeholder="Enter description here ...">{{ old('description') }}</textarea>
                                                 <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('description') }}</div>
                                             </div>
                                         </div>
@@ -203,18 +203,11 @@
                                             </div> --}}
 
                                         {{-- <div class="bg-gray-500 h-screen w-screen sm:px-8 md:px-16 sm:py-8"> --}}
-                                            <div class="form-group">
-                                                <label for="project_pictures[]">Upload Image</label>
-                                                <div class="input-group">
-                                                    <div class="custom-file">
-                                                        <input required type="file" class="form-control" name="project_pictures[]" placeholder="project_images" multiple>
-                                                        {{-- <label for="property_imgURLs[]" class="custom-file-label">Choose File</label> --}}
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <x-image-dropzone name="project_pictures[]" required cover-first />
                                             <p class="text-sm text-gray-500" style="margin-top: .4rem !important;">
-                                                Cover photo (2800*1867), Rest of the pictures (1000*667) Respectively
+                                                The first photo is the cover (2800*1867), the rest are gallery pictures (1000*667)
                                             </p>
+                                            <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('project_pictures') ?: $errors->first('project_pictures.*') }}</div>
                                             
                                             {{-- <main class="container mx-auto max-w-screen-lg h-full pt-5 pb-6 mt-1">
                                                 <!-- FILE UPLOAD MODAL -->
@@ -330,4 +323,5 @@
             </div>
         </div>
     </div>
+    <x-image-lightbox />
 </x-app-layout>

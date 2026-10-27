@@ -48,16 +48,92 @@
                 </a>
             </div>
             
+            @php $filtering = collect(request()->only(['q', 'status', 'year', 'featured']))->filter(fn ($value) => filled($value))->isNotEmpty(); @endphp
+            <form method="GET" action="{{ route('post_projects.index') }}" class="bg-white rounded-lg shadow-md p-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-3 items-end">
+                    <div class="lg:col-span-2">
+                        <label for="q" class="block text-xs font-medium text-gray-500 uppercase">Search</label>
+                        <div class="mt-1 relative">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" />
+                            </svg>
+                            <input type="search" name="q" id="q" value="{{ request('q') }}" placeholder="Title, code, client, location…" class="pl-9 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="status" class="block text-xs font-medium text-gray-500 uppercase">Status</label>
+                        <select name="status" id="status" onchange="this.form.submit()" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="">All statuses</option>
+                            @foreach ($filterOptions['statuses'] as $status)
+                                <option value="{{ $status }}" @selected(strtolower(request('status', '')) === strtolower($status))>{{ $status }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="year" class="block text-xs font-medium text-gray-500 uppercase">Year</label>
+                        <select name="year" id="year" onchange="this.form.submit()" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="">All years</option>
+                            @foreach ($filterOptions['years'] as $year)
+                                <option value="{{ $year }}" @selected(request('year') == $year)>{{ $year }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="featured" class="block text-xs font-medium text-gray-500 uppercase">Featured</label>
+                        <select name="featured" id="featured" onchange="this.form.submit()" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="">All projects</option>
+                            <option value="1" @selected(request('featured') === '1')>Featured only</option>
+                            <option value="0" @selected(request('featured') === '0')>Not featured</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="sort" class="block text-xs font-medium text-gray-500 uppercase">Sort by</label>
+                        <select name="sort" id="sort" onchange="this.form.submit()" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="newest" @selected(request('sort', 'newest') === 'newest')>Newest first</option>
+                            <option value="oldest" @selected(request('sort') === 'oldest')>Oldest first</option>
+                            <option value="title" @selected(request('sort') === 'title')>Title A–Z</option>
+                            <option value="year" @selected(request('sort') === 'year')>Project year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mt-3 flex flex-wrap items-center justify-between gap-3">
+                    <p class="text-sm text-gray-500">
+                        Showing <span class="font-semibold text-gray-700">{{ $projects->count() }}</span> of {{ $totalProjects }} {{ \Illuminate\Support\Str::plural('project', $totalProjects) }}
+                    </p>
+                    <div class="flex gap-2">
+                        @if ($filtering || request()->filled('sort'))
+                            <a href="{{ route('post_projects.index') }}" class="px-4 py-2 rounded-md border border-gray-300 text-sm font-semibold text-gray-700 hover:bg-gray-50">Clear</a>
+                        @endif
+                        <button type="submit" class="px-4 py-2 rounded-md bg-gray-800 text-sm font-semibold text-white hover:bg-gray-700">Search</button>
+                    </div>
+                </div>
+            </form>
+
+            @if ($projects->isEmpty() && $filtering)
+                <div class="mt-10 bg-white rounded-lg shadow-md px-6 py-12 text-center">
+                    <p class="text-gray-700 font-semibold">No projects match your search.</p>
+                    <p class="mt-1 text-sm text-gray-500">Try different words or <a href="{{ route('post_projects.index') }}" class="text-indigo-600 hover:text-indigo-900">clear the filters</a>.</p>
+                </div>
+            @endif
+
             <div class="grid grid-cols-1 md:grid-cols-2 mb-6 lg:grid-cols-3 gap-x-3 gap-y-6 mt-10">
                 @foreach ($projects as $project)
-                    <div class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 relative min-w-full">
+                    <div class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 relative min-w-full flex flex-col">
 
-                        @php $images = $project->images ? json_decode($project->images->project_pictures, true) : []; @endphp
-                        @if (!empty($images))
-                            <img class="object-cover w-full h-64" src="{{ asset('/img/projects/'.$project->id.'/main/'.$images[0]) }}" alt="Project Picture">
+                        @php $imageUrls = $project->imageUrls(); @endphp
+                        @if (!empty($imageUrls))
+                            <button type="button" x-data @click="$dispatch('open-lightbox', { urls: @js($imageUrls), index: 0 })" title="View photos" class="relative block w-full cursor-zoom-in">
+                                <img class="object-cover w-full h-64 hover:opacity-90 transition" src="{{ $imageUrls[0] }}" alt="Project Picture">
+                                <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-black/60 text-white text-xs">{{ count($imageUrls) }} {{ \Illuminate\Support\Str::plural('photo', count($imageUrls)) }}</span>
+                            </button>
                         @endif
 
-                        <div class="p-6">
+                        <div class="p-6 flex-1">
                             <div>
                                 <span class="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">Project #{{ $project->id }}</span>
                                 <a href="{{ route('post_projects.show', $project->id) }}" class="block mt-2 text-2xl font-semibold text-gray-800 dark:text-white hover:text-gray-600 hover:underline">{{ $project->title }}</a>
@@ -89,7 +165,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-gray-900 grid grid-cols-3 bottom-0 w-full">
+                        <div class="bg-gray-900 grid grid-cols-3 w-full mt-auto">
                             <a href="{{ route('post_projects.show', $project->id) }}" class="bg-indigo-500 text-white hover:text-gray-300 py-3 text-center">View</a>
                             <a href="{{ route('post_projects.edit', $project->id) }}" class="bg-yellow-600 text-white hover:text-gray-300 py-3 text-center">Edit</a>
                             <form class="bg-red-600" action="{{ route('post_projects.destroy', $project->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this project?');">
@@ -114,4 +190,5 @@
             @endif
         </div>
     </div>
+    <x-image-lightbox />
 </x-app-layout>

@@ -32,6 +32,20 @@ class UpdateProjectRequest extends FormRequest
             'types' => 'nullable|array',
             'types.*' => 'nullable|string|max:255',
             'featured' => 'required|boolean',
+            'project_pictures' => 'nullable|array',
+            'project_pictures.*' => 'image|mimes:jpeg,jpg,png,gif,webp|max:10240',
+            'replace_images' => 'nullable|array',
+            'replace_images.*' => 'image|mimes:jpeg,jpg,png,gif,webp|max:10240',
+            'remove_images' => 'nullable|array',
+            'remove_images.*' => 'integer|min:0',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'project_pictures.*.image' => 'Every new photo must be an image (jpeg, png, gif or webp).',
+            'replace_images.*.image' => 'Every replacement photo must be an image (jpeg, png, gif or webp).',
         ];
     }
 }

@@ -45,4 +45,16 @@ class Project extends Model
     {
         return $this->belongsTo(Image::class, 'id', 'project_id',);
     }
+
+    /**
+     * Picture URLs in display order; the first (cover) picture is stored in main/.
+     */
+    public function imageUrls(): array
+    {
+        $names = $this->images ? (json_decode($this->images->project_pictures, true) ?: []) : [];
+
+        return collect($names)
+            ->map(fn ($name, $index) => asset('img/projects/'.$this->id.($index === 0 ? '/main/' : '/').$name))
+            ->all();
+    }
 }

@@ -13,12 +13,12 @@
     </x-slot>
 
     <div>
-        <div class="max-w-4xl mx-auto md:py-10 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto md:py-10 sm:px-6 lg:px-8">
             <div class="md:mt-5 md:mt-0 md:col-span-6 sm:col-span-12">
                 <div>
                     <div class="mt-10">
-                        <div class="mx-auto" style="width: 50%; @media (min-width: 1000px) {width: 90%;}">
-                            <form method="post" action="{{ route('post_projects.update', $project->id) }}">
+                        <div class="mx-auto w-full">
+                            <form method="post" action="{{ route('post_projects.update', $project->id) }}" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 
@@ -57,10 +57,82 @@
                                             </div>
                                         @endif
 
-                                        @php $images = $project->images ? json_decode($project->images->project_pictures, true) : []; @endphp
-                                        @if (!empty($images))
-                                            <img class="h-full w-full object-cover" src="/img/projects/{{ $project->id }}/main/{{ $images[0] }}" alt="Project Picture">
-                                        @endif
+                                        @php $imageUrls = $project->imageUrls(); @endphp
+                                        <div>
+                                            <div class="flex items-baseline justify-between">
+                                                <label class="block text-sm font-medium text-gray-700">Project photos</label>
+                                                <span class="text-xs text-gray-500">{{ count($imageUrls) }} {{ \Illuminate\Support\Str::plural('photo', count($imageUrls)) }}</span>
+                                            </div>
+                                            <p class="text-sm text-gray-500">Click &times; to remove a photo or "Replace" to swap it (you can also drop an image onto a photo). Changes apply when you submit.</p>
+
+                                            <ul class="mt-3 grid grid-cols-1 gap-4">
+                                                @forelse ($imageUrls as $index => $url)
+                                                    <li
+                                                        x-data="{
+                                                            removed: {{ in_array($index, old('remove_images', [])) ? 'true' : 'false' }},
+                                                            preview: null,
+                                                            dragging: false,
+                                                            replace(list) {
+                                                                const file = [...list].find(file => file.type.startsWith('image/'));
+                                                                if (! file) return;
+                                                                const transfer = new DataTransfer();
+                                                                transfer.items.add(file);
+                                                                this.$refs.file.files = transfer.files;
+                                                                this.show(file);
+                                                            },
+                                                            show(file) {
+                                                                if (this.preview) URL.revokeObjectURL(this.preview);
+                                                                this.preview = file ? URL.createObjectURL(file) : null;
+                                                            },
+                                                            undo() {
+                                                                this.$refs.file.value = '';
+                                                                this.show(null);
+                                                            },
+                                                        }"
+                                                        @dragover.prevent="dragging = ! removed"
+                                                        @dragleave.prevent="dragging = false"
+                                                        @drop.prevent="dragging = false; if (! removed) replace($event.dataTransfer.files)"
+                                                        :class="dragging ? 'ring-2 ring-red-500' : ''"
+                                                        class="relative rounded-md overflow-hidden border border-gray-200 bg-gray-100 shadow-sm"
+                                                    >
+                                                        <img :src="preview || @js($url)" src="{{ $url }}" alt="Project photo {{ $index + 1 }}" :class="removed ? 'opacity-30' : ''" @click="$dispatch('open-lightbox', preview ? { urls: [preview], index: 0 } : { urls: @js($imageUrls), index: {{ $index }} })" title="View photo" class="h-80 sm:h-[28rem] w-full object-cover cursor-zoom-in">
+
+                                                        <div class="absolute top-2 left-2 flex flex-wrap gap-1">
+                                                            @if ($index === 0)
+                                                                <span class="px-2 py-0.5 rounded-full bg-red-700 text-white text-xs">Cover</span>
+                                                            @endif
+                                                            <span x-show="preview && ! removed" class="px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 text-xs">Replaced</span>
+                                                        </div>
+
+                                                        <button type="button" x-show="! removed" @click="undo(); removed = true" title="Remove photo" class="absolute top-2 right-2 h-8 w-8 flex items-center justify-center rounded-full bg-white text-gray-700 text-xl leading-none shadow hover:bg-red-600 hover:text-white">&times;</button>
+
+                                                        <div x-show="! removed" class="absolute bottom-2 left-2 right-2 flex justify-center">
+                                                            <button type="button" @click="preview ? undo() : $refs.file.click()" class="px-3 py-1.5 rounded-md bg-white text-xs font-semibold text-gray-800 shadow hover:bg-gray-100" x-text="preview ? 'Undo replace' : 'Replace'"></button>
+                                                        </div>
+
+                                                        <div x-show="removed" class="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                                                            <span class="px-2 py-0.5 rounded-full bg-gray-800 text-white text-xs">Will be removed</span>
+                                                            <button type="button" @click="removed = false" class="px-3 py-1.5 rounded-md bg-white text-xs font-semibold text-gray-800 shadow hover:bg-gray-100">Undo</button>
+                                                        </div>
+
+                                                        <input type="checkbox" name="remove_images[]" value="{{ $index }}" x-model="removed" class="hidden">
+                                                        <input x-ref="file" type="file" name="replace_images[{{ $index }}]" accept="image/*" :disabled="removed" @change="show($event.target.files[0])" class="hidden">
+                                                    </li>
+                                                @empty
+                                                    <li class="text-sm text-gray-500">This project has no photos yet. Add some below.</li>
+                                                @endforelse
+                                            </ul>
+                                            @if (count($imageUrls) > 1)
+                                                <p class="text-sm text-gray-500 mt-2">If the cover is removed, the next photo becomes the cover.</p>
+                                            @endif
+                                            <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('remove_images') ?: $errors->first('replace_images.*') }}</div>
+
+                                            <label class="block text-sm font-medium text-gray-700 mt-5">Add more photos</label>
+                                            <x-image-dropzone name="project_pictures[]" :cover-first="empty($imageUrls)" />
+                                            <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('project_pictures.*') }}</div>
+                                        </div>
+
+                                        <div class="border-t border-gray-200"></div>
 
                                         <div class="grid grid-cols-3 gap-6">
                                             <div class="col-span-6">
@@ -81,7 +153,7 @@
                                         <div>
                                             <label for="description" class="block text-sm font-medium text-gray-700">Project description</label>
                                             <div class="mt-1">
-                                                <textarea id="description" name="description" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md @error('description') border-red-500 @enderror" placeholder="Enter description here ...">{{ old('description', $project->description) }}</textarea>
+                                                <textarea id="description" name="description" rows="10" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md @error('description') border-red-500 @enderror" placeholder="Enter description here ...">{{ old('description', $project->description) }}</textarea>
                                                 <div class="alert-description text-sm text-red-600 text-danger mt-1">{{ $errors->first('description') }}</div>
                                             </div>
                                         </div>
@@ -211,4 +283,5 @@
             </div>
         </div>
     </div>
+    <x-image-lightbox />
 </x-app-layout>

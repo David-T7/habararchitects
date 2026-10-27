@@ -42,10 +42,10 @@
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     @foreach ($recentProjects as $project)
-                                        <tr>
+                                        <tr onclick="window.location='{{ route('post_projects.show', $project->id) }}'" class="cursor-pointer hover:bg-gray-50 transition" title="Open project">
                                             <td class="px-6 py-4 text-sm text-gray-500">{{ $project->id }}</td>
                                             <td class="px-6 py-4 text-sm font-medium text-gray-900">
-                                                {{ $project->title }}
+                                                <a href="{{ route('post_projects.show', $project->id) }}" class="hover:text-indigo-600 hover:underline">{{ $project->title }}</a>
                                                 @if ($project->featured)
                                                     <span class="ms-2 px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 text-xs">Featured</span>
                                                 @endif
@@ -53,7 +53,7 @@
                                             <td class="px-6 py-4 text-sm text-gray-500">{{ $project->location }}</td>
                                             <td class="px-6 py-4 text-sm text-gray-500">{{ $project->status }}</td>
                                             <td class="px-6 py-4 text-sm text-gray-500">{{ $project->year }}</td>
-                                            <td class="px-6 py-4 text-sm text-right whitespace-nowrap">
+                                            <td class="px-6 py-4 text-sm text-right whitespace-nowrap cursor-default" onclick="event.stopPropagation()">
                                                 <a href="{{ route('post_projects.show', $project->id) }}" class="text-indigo-600 hover:text-indigo-900">View</a>
                                                 <a href="{{ route('post_projects.edit', $project->id) }}" class="ms-4 text-yellow-600 hover:text-yellow-800">Edit</a>
                                                 <form action="{{ route('post_projects.destroy', $project->id) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this project?');">
